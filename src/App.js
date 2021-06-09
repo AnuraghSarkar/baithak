@@ -1,12 +1,12 @@
 // Import Pages
 import GlobalStyle from './components/GlobalStyle';
 import AboutUs from './pages/AboutUs'
-// Global Style
-
+import Nav from './components/Nav'
 
 function App() {
   return (
     <div className="App">
+      <Nav />
       <GlobalStyle />
       <AboutUs />
     </div>
