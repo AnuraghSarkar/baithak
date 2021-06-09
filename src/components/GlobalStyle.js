@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+// font-family: 'Indie Flower', cursive;
 const GlobalStyle = createGlobalStyle`
     *,*::after,*::before{
         margin: 0;
@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         box-sizing: border-box;
         background: #1b1b1b;
-    }
+        font-family: 'Mukta', sans-serif;    
 
     button{
         font-weight: bold;
@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
         &:hover{
         background-color: #23d997;
         color:white;
+        font-family: 'Mukta', sans-serif;
         }
     }
     h2 {
@@ -40,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
     }
     h4 {
         font-weight: bold;
+        font-size: 2rem;
     }
     span {
         font-weight: bold;
