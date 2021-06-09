@@ -1,5 +1,5 @@
 import React from 'react'
-import anime1 from '../img/anime1.png';
+import anime1 from '../img/anime1_.png';
 
 const AboutSection = () => {
     return (
