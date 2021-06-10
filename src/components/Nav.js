@@ -1,15 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
 
 const Nav = () => {
     return (
         <>
             <Navbar>
-                <h1><a href="#" id="logo">Animeficator</a></h1>
+                <h1><Link id="logo" to='/'>Animeficator</Link></h1>
                 <ul>
-                    <li><a href="#"></a>1. About Us</li>
-                    <li><a href="#"></a>2. Our Suggestions</li>
-                    <li><a href="#"></a>3. Contact Us</li>
+                    <li><Link to='/'>1. About Us</Link></li>
+                    <li><Link to='/suggestion'>2. Our Suggestions</Link></li>
+                    <li><Link to='/contact'>3. Contact Us</Link></li>
                 </ul>
 
             </Navbar>
@@ -35,6 +37,7 @@ const Navbar = styled.nav`
     li {
     padding-left: 10rem;
     position: relative;
+    color: white;
   }
     #logo {
         font-size: 1.5rem;
