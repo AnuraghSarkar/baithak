@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom'
 import { AnimeState } from '../AnimeState'
+import { motion } from 'framer-motion';
+import { PageAnimation } from '../animation';
 const AnimeDetail = () => {
     const history = useHistory();
     const url = history.location.pathname;
@@ -17,7 +19,7 @@ const AnimeDetail = () => {
     return (
         <>
             {anime && (
-                <Details>
+                <Details exit="exit" variants={PageAnimation} initial='hidden' animate='show' >
                     <Headline>
                         <h2>{anime.title}</h2>
                         <img src={anime.mainImg} alt="Anime " />
@@ -35,7 +37,7 @@ const AnimeDetail = () => {
         </>
     );
 };
-const Details = styled.div`
+const Details = styled(motion.div)`
     color: white;
 `
 const Headline = styled.div`

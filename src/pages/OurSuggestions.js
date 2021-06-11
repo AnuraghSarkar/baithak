@@ -5,9 +5,13 @@ import anime3 from '../img/anime3.jpg'
 import anime4 from '../img/anime4.jpg'
 import anime8 from '../img/anime8.jpg'
 
+// Animation
+import { motion } from 'framer-motion';
+import { PageAnimation } from '../animation';
+
 const OurSuggestion = () => {
     return (
-        <List>
+        <List exit='exit' variants={PageAnimation} initial='hidden' animate='show' style={{ background: "#ffffff" }}>
             <Anime>
                 <h2>Jujustu Kaisen</h2>
                 <div className="line"></div>
@@ -33,7 +37,7 @@ const OurSuggestion = () => {
     );
 }
 
-const List = styled.div`
+const List = styled(motion.div)`
     min-height: 100vh;
     overflow: hidden;
     padding: 5rem 10rem;
