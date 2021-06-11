@@ -7,30 +7,43 @@ import anime8 from '../img/anime8.jpg'
 
 // Animation
 import { motion } from 'framer-motion';
-import { PageAnimation } from '../animation';
+import { PageAnimation, fade, photAnim, lineAnimation, slider, sliderContainer } from '../animation';
+import { Hidden } from '../styles'
 
 const OurSuggestion = () => {
     return (
         <List exit='exit' variants={PageAnimation} initial='hidden' animate='show' style={{ background: "#ffffff" }}>
+            <motion.div variants={sliderContainer}>
+                <Frame1 variants={slider} />
+                <Frame2 variants={slider} />
+                <Frame3 variants={slider} />
+                <Frame4 variants={slider} />
+            </motion.div>
             <Anime>
-                <h2>Jujustu Kaisen</h2>
-                <div className="line"></div>
-                <Link to='/suggestion/jujutsu-kaisen'>
-                    <img src={anime3} alt="Anime Name" />
+                <motion.h2 variants={fade}>Jujustu Kaisen</motion.h2>
+                <motion.div className="line"></motion.div>
+                <Link variants={lineAnimation} to='/suggestion/jujutsu-kaisen'>
+                    <Hidden>
+                        <motion.img variants={photAnim} src={anime3} alt="Anime Name" />
+                    </Hidden>
                 </Link>
             </Anime>
             <Anime>
-                <h2>Demon Slayer</h2>
-                <div className="line"></div>
-                <Link to='/suggestion/demon-slayer'>
-                    <img src={anime4} alt="Anime Name" />
+                <motion.h2>Demon Slayer</motion.h2>
+                <motion.div className="line"></motion.div>
+                <Link variants={lineAnimation} to='/suggestion/demon-slayer'>
+                    <Hidden>
+                        <motion.img variants={photAnim} src={anime4} alt="Anime Name" />
+                    </Hidden>
                 </Link>
             </Anime>
             <Anime>
-                <h2>One Piece</h2>
-                <div className="line"></div>
-                <Link to='/suggestion/one-piece'>
-                    <img src={anime8} alt="Anime Name" />
+                <motion.h2>One Piece</motion.h2>
+                <motion.div className="line"></motion.div>
+                <Link variants={lineAnimation} to='/suggestion/one-piece'>
+                    <Hidden>
+                        <motion.img variants={photAnim} src={anime8} alt="Anime Name" />
+                    </Hidden>
                 </Link>
             </Anime>
         </List>
@@ -49,7 +62,7 @@ const Anime = styled.div`
     padding-bottom: 10rem;
     .line {
         height: .5rem;
-        background: #cccccc;
+        background: #23d997;
         margin-bottom: 3rem;
     }
     img {
@@ -58,5 +71,25 @@ const Anime = styled.div`
         object-fit: cover;
     }
 `
+// Frame Animation
+const Frame1 = styled.div`
+    position: fixed;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    height: 100vh;
+    background: #fffebf;
+    z-index: 2;
+`
 
+const Frame2 = styled(Frame1)`
+    background: #ff8efb;
+`
+
+const Frame3 = styled(Frame1)`
+    background: #8ed2ff;
+`
+const Frame4 = styled(Frame1)`
+    background: #8effa0;
+`
 export default OurSuggestion;

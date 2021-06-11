@@ -7,7 +7,7 @@ import sailor from '../img/anime3.svg'
 import sasuke from '../img/anime4.svg'
 // import anime2 from '../img/anime2.jpg'
 import anime7 from '../img/anime7.jpg'
-import { About, Description, Image, Hide } from '../styles'
+import { About, Description, Image } from '../styles'
 
 const AnimeListSection = () => {
     return (
