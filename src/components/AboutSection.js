@@ -30,5 +30,5 @@ const AboutSection = () => {
             <Wave />
         </About>
     );
-}
+};
 export default AboutSection;

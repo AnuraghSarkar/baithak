@@ -7,10 +7,13 @@ import anime8 from '../img/anime8.jpg'
 
 // Animation
 import { motion } from 'framer-motion';
-import { PageAnimation, fade, photAnim, lineAnimation, slider, sliderContainer } from '../animation';
+import { PageAnimation, fade, photAnim, lineAnimation, slider, sliderContainer, scrollReveal, swoopAdoop } from '../animation';
 import { Hidden } from '../styles'
+import { UseScroll } from '../components/useScroll'
 
 const OurSuggestion = () => {
+    const [element, controls] = UseScroll();
+    const [element2, controls2] = UseScroll();
     return (
         <List exit='exit' variants={PageAnimation} initial='hidden' animate='show' style={{ background: "#ffffff" }}>
             <motion.div variants={sliderContainer}>
@@ -28,14 +31,14 @@ const OurSuggestion = () => {
                     </Hidden>
                 </Link>
             </Anime>
-            <Anime>
+            <Anime variants={scrollReveal} ref={element} animate={controls} initial='hidden'>
                 <motion.h2>Demon Slayer</motion.h2>
-                <motion.div className="line"></motion.div>
+                <motion.div className="line" variants={lineAnimation}></motion.div>
                 <Link to='/suggestion/demon-slayer'>
                     <img src={anime4} alt="Anime Name" />
                 </Link>
             </Anime>
-            <Anime>
+            <Anime variants={scrollReveal} ref={element2} animate={controls2} initial='hidden'>
                 <motion.h2>One Piece</motion.h2>
                 <motion.div className="line"></motion.div>
                 <Link to='/suggestion/one-piece'>
@@ -54,7 +57,7 @@ const List = styled(motion.div)`
         padding: 1rem 0;
     }
 `
-const Anime = styled.div`
+const Anime = styled(motion.div)`
     padding-bottom: 10rem;
     .line {
         height: .5rem;

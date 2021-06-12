@@ -8,10 +8,15 @@ import sasuke from '../img/anime4.svg'
 // import anime2 from '../img/anime2.jpg'
 import anime7 from '../img/anime7.jpg'
 import { About, Description, Image } from '../styles'
+import { UseScroll } from './useScroll';
+import { scrollReveal } from '../animation';
+
+
 
 const AnimeListSection = () => {
+    const [element, controls] = UseScroll();
     return (
-        <Services>
+        <Services variants={scrollReveal} animate={controls} initial='hidden' ref={element}>
             <Description>
                 <h2>Best <span>anime</span> recommendation.</h2>
                 <Cards>
