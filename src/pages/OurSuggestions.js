@@ -23,28 +23,28 @@ const OurSuggestion = () => {
                 <Frame3 variants={slider}></Frame3>
                 <Frame4 variants={slider}></Frame4>
             </motion.div>
-                <Anime>
-                    <motion.h2 variants={fade}>Jujustu Kaisen</motion.h2>
-                    <motion.div className="line" variants={lineAnimation} ></motion.div>
-                    <Link to='/suggestion/jujutsu-kaisen'>
-                        <Hidden>
-                            <motion.img variants={photAnim} src={anime3} alt="Anime Name" />
-                        </Hidden>
-                    </Link>
-                </Anime>
-                <Anime variants={scrollReveal} ref={element} animate={controls} initial='hidden'>
-                    <motion.h2>Demon Slayer</motion.h2>
-                    <motion.div className="line" variants={lineAnimation}></motion.div>
-                    <Link to='/suggestion/demon-slayer'>
-                        <img src={anime4} alt="Anime Name" />
-                    </Link>
-                </Anime>
-                <Anime variants={scrollReveal} ref={element2} animate={controls2} initial='hidden'>
-                    <motion.h2>One Piece</motion.h2>
-                    <motion.div className="line"></motion.div>
-                    <Link to='/suggestion/one-piece'>
-                        <img src={anime8} alt="Anime Name" />
-                    </Link>
+            <Anime>
+                <motion.h2 variants={fade}>Jujustu Kaisen</motion.h2>
+                <motion.div className="line" variants={lineAnimation} ></motion.div>
+                <Link to='/suggestion/jujutsu-kaisen'>
+                    <Hidden>
+                        <motion.img variants={photAnim} src={anime3} alt="Anime Name" />
+                    </Hidden>
+                </Link>
+            </Anime>
+            <Anime variants={scrollReveal} ref={element} animate={controls} initial='hidden'>
+                <motion.h2>Demon Slayer</motion.h2>
+                <motion.div className="line" variants={lineAnimation}></motion.div>
+                <Link to='/suggestion/demon-slayer'>
+                    <img src={anime4} alt="Anime Name" />
+                </Link>
+            </Anime>
+            <Anime variants={scrollReveal} ref={element2} animate={controls2} initial='hidden'>
+                <motion.h2>One Piece</motion.h2>
+                <motion.div className="line"></motion.div>
+                <Link to='/suggestion/one-piece'>
+                    <img src={anime8} alt="Anime Name" />
+                </Link>
             </Anime>
             <ScrollTop />
         </List>
@@ -55,6 +55,9 @@ const List = styled(motion.div)`
     min-height: 100vh;
     overflow: hidden;
     padding: 5rem 10rem;
+    @media (max-width:1300px){
+        padding: 2rem 2rem;
+    }
     h2 {
         padding: 1rem 0;
     }
