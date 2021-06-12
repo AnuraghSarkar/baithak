@@ -1,21 +1,26 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-
+import { motion } from 'framer-motion';
+import { useLocation } from 'react-router';
 
 const Nav = () => {
+    const { pathname } = useLocation();
     return (
-        <>
-            <Navbar>
-                <h1><Link id="logo" to='/'>Animeficator</Link></h1>
-                <ul>
-                    <li><Link to='/'>1. About Us</Link></li>
-                    <li><Link to='/suggestion'>2. Our Suggestions</Link></li>
-                    <li><Link to='/contact'>3. Contact Us</Link></li>
-                </ul>
+        <Navbar>
+            <h1><Link id="logo" to='/'>Animeficator</Link></h1>
+            <ul>
+                <li><Link to='/'>1. About Us</Link>
+                    <Line transition={{ duration: .75 }} initial={{ width: '0%' }} animate={{ width: pathname === '/' ? '50%' : '0%' }} /></li>
+                <li><Link to='/suggestion'>2. Our Suggestions</Link>
+                    Line transition={{ duration: .75 }} initial={{ width: '0%' }} animate={{ width: pathname === '/suggestion' ? '50%' : '0%' }} />
+                </li>
+                <li><Link to='/contact'>3. Contact Us</Link>
+                    Line transition={{ duration: .75 }} initial={{ width: '0%' }} animate={{ width: pathname === '/contact' ? '50%' : '0%' }} />
+                </li>
+            </ul>
 
-            </Navbar>
-        </>
+        </Navbar>
     );
 }
 const Navbar = styled.nav`
@@ -62,6 +67,17 @@ const Navbar = styled.nav`
         li {
             padding:0
         }
+    }
+`
+const Line = styled(motion.div)`
+    height:.3rem;
+    background: #23d997;
+    width: 0%;
+    position: absolute;
+    bottom : -80%;
+    left: 60%;
+    @media (max-width:1300px){
+        left:0%;
     }
 `
 export default Nav;
