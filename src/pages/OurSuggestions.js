@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom'
 import anime3 from '../img/anime3.jpg'
 import anime4 from '../img/anime4.jpg'
 import anime8 from '../img/anime8.jpg'
-
 // Animation
 import { motion } from 'framer-motion';
-import { PageAnimation, fade, photAnim, lineAnimation, slider, sliderContainer, scrollReveal, swoopAdoop } from '../animation';
+import { PageAnimation, fade, photAnim, lineAnimation, slider, sliderContainer, scrollReveal } from '../animation';
 import { Hidden } from '../styles'
 import { UseScroll } from '../components/useScroll'
+import { ScrollTop } from '../components/ScrollTop'
+
 
 const OurSuggestion = () => {
     const [element, controls] = UseScroll();
@@ -22,29 +23,30 @@ const OurSuggestion = () => {
                 <Frame3 variants={slider}></Frame3>
                 <Frame4 variants={slider}></Frame4>
             </motion.div>
-            <Anime>
-                <motion.h2 variants={fade}>Jujustu Kaisen</motion.h2>
-                <motion.div className="line" variants={lineAnimation} ></motion.div>
-                <Link to='/suggestion/jujutsu-kaisen'>
-                    <Hidden>
-                        <motion.img variants={photAnim} src={anime3} alt="Anime Name" />
-                    </Hidden>
-                </Link>
+                <Anime>
+                    <motion.h2 variants={fade}>Jujustu Kaisen</motion.h2>
+                    <motion.div className="line" variants={lineAnimation} ></motion.div>
+                    <Link to='/suggestion/jujutsu-kaisen'>
+                        <Hidden>
+                            <motion.img variants={photAnim} src={anime3} alt="Anime Name" />
+                        </Hidden>
+                    </Link>
+                </Anime>
+                <Anime variants={scrollReveal} ref={element} animate={controls} initial='hidden'>
+                    <motion.h2>Demon Slayer</motion.h2>
+                    <motion.div className="line" variants={lineAnimation}></motion.div>
+                    <Link to='/suggestion/demon-slayer'>
+                        <img src={anime4} alt="Anime Name" />
+                    </Link>
+                </Anime>
+                <Anime variants={scrollReveal} ref={element2} animate={controls2} initial='hidden'>
+                    <motion.h2>One Piece</motion.h2>
+                    <motion.div className="line"></motion.div>
+                    <Link to='/suggestion/one-piece'>
+                        <img src={anime8} alt="Anime Name" />
+                    </Link>
             </Anime>
-            <Anime variants={scrollReveal} ref={element} animate={controls} initial='hidden'>
-                <motion.h2>Demon Slayer</motion.h2>
-                <motion.div className="line" variants={lineAnimation}></motion.div>
-                <Link to='/suggestion/demon-slayer'>
-                    <img src={anime4} alt="Anime Name" />
-                </Link>
-            </Anime>
-            <Anime variants={scrollReveal} ref={element2} animate={controls2} initial='hidden'>
-                <motion.h2>One Piece</motion.h2>
-                <motion.div className="line"></motion.div>
-                <Link to='/suggestion/one-piece'>
-                    <img src={anime8} alt="Anime Name" />
-                </Link>
-            </Anime>
+            <ScrollTop />
         </List>
     );
 }
