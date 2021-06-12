@@ -7,7 +7,7 @@ import { PageAnimation } from '../animation';
 const AnimeDetail = () => {
     const history = useHistory();
     const url = history.location.pathname;
-    const [animes, setAnimes] = useState(AnimeState);
+    const [animes] = useState(AnimeState);
     const [anime, setAnime] = useState(null);
 
     // use Effect

@@ -7,7 +7,7 @@ export const PageAnimation = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 1,
+            duration: .5,
             when: 'beforeChildren',
             staggerChildren: .25,
         },
@@ -39,30 +39,30 @@ export const photAnim = {
         scale: 1,
         opacity: 1,
         transition: {
-            ease: 'easeOut'
+            ease: 'easeOut',
+            duration: 0.75,
         },
     }
 };
 
 export const lineAnimation = {
     hidden: {
-        width: 0
+        width: "0%"
     },
     show: {
-        width: '100%',
-        transition: { duration: .9 }
+        width: "100%",
+        transition: { duration: 1 },
     }
 };
-
 export const slider = {
-    hidden: { x: '-130%', skew: '45deg' },
+    hidden: { x: "-130%", skew: "45deg" },
     show: {
-        x: '100%', skew: '0deg'
+        x: "100%",
+        skew: "0deg",
+        transition: { ease: "easeOut", duration: 1 },
     },
-    transition: { ease: 'easeOut', duration: 1 }
 };
-
 export const sliderContainer = {
     hidden: { opacity: 1 },
-    show: { opacity: 1, transition: { staggerChildren: .13, ease: 'easeOut' } }
+    show: { opacity: 1, transition: { staggerChildren: 0.15, ease: "easeOut" } },
 };

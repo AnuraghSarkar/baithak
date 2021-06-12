@@ -14,15 +14,15 @@ const OurSuggestion = () => {
     return (
         <List exit='exit' variants={PageAnimation} initial='hidden' animate='show' style={{ background: "#ffffff" }}>
             <motion.div variants={sliderContainer}>
-                <Frame1 variants={slider} />
-                <Frame2 variants={slider} />
-                <Frame3 variants={slider} />
-                <Frame4 variants={slider} />
+                <Frame1 variants={slider}></Frame1>
+                <Frame2 variants={slider}></Frame2>
+                <Frame3 variants={slider}></Frame3>
+                <Frame4 variants={slider}></Frame4>
             </motion.div>
             <Anime>
                 <motion.h2 variants={fade}>Jujustu Kaisen</motion.h2>
-                <motion.div className="line"></motion.div>
-                <Link variants={lineAnimation} to='/suggestion/jujutsu-kaisen'>
+                <motion.div className="line" variants={lineAnimation} ></motion.div>
+                <Link to='/suggestion/jujutsu-kaisen'>
                     <Hidden>
                         <motion.img variants={photAnim} src={anime3} alt="Anime Name" />
                     </Hidden>
@@ -31,19 +31,15 @@ const OurSuggestion = () => {
             <Anime>
                 <motion.h2>Demon Slayer</motion.h2>
                 <motion.div className="line"></motion.div>
-                <Link variants={lineAnimation} to='/suggestion/demon-slayer'>
-                    <Hidden>
-                        <motion.img variants={photAnim} src={anime4} alt="Anime Name" />
-                    </Hidden>
+                <Link to='/suggestion/demon-slayer'>
+                    <img src={anime4} alt="Anime Name" />
                 </Link>
             </Anime>
             <Anime>
                 <motion.h2>One Piece</motion.h2>
                 <motion.div className="line"></motion.div>
-                <Link variants={lineAnimation} to='/suggestion/one-piece'>
-                    <Hidden>
-                        <motion.img variants={photAnim} src={anime8} alt="Anime Name" />
-                    </Hidden>
+                <Link to='/suggestion/one-piece'>
+                    <img src={anime8} alt="Anime Name" />
                 </Link>
             </Anime>
         </List>
@@ -72,24 +68,22 @@ const Anime = styled.div`
     }
 `
 // Frame Animation
-const Frame1 = styled.div`
-    position: fixed;
-    left: 0;
-    top: 10%;
-    width: 100%;
-    height: 100vh;
-    background: #fffebf;
-    z-index: 2;
-`
-
+const Frame1 = styled(motion.div)`
+  position: fixed;
+  left: 0;
+  top: 10%;
+  width: 100%;
+  height: 100vh;
+  background: #fffebf;
+  z-index: 2;
+`;
 const Frame2 = styled(Frame1)`
-    background: #ff8efb;
-`
-
+  background: #ff8efb;
+`;
 const Frame3 = styled(Frame1)`
-    background: #8ed2ff;
-`
+  background: #8ed2ff;
+`;
 const Frame4 = styled(Frame1)`
-    background: #8effa0;
-`
+  background: #8effa0;
+`;
 export default OurSuggestion;
