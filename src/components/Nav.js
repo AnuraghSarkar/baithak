@@ -8,15 +8,35 @@ const Nav = () => {
     const { pathname } = useLocation();
     return (
         <Navbar>
-            <h1><Link id="logo" to='/'>Animeficator</Link></h1>
+            <h1>
+                <Link id="logo" to="/">
+                    Animeficator
+                </Link>
+            </h1>
             <ul>
-                <li><Link to='/'>1. About Us</Link>
-                    <Line transition={{ duration: .75 }} initial={{ width: '0%' }} animate={{ width: pathname === '/' ? '50%' : '0%' }} /></li>
-                <li><Link to='/suggestion'>2. Our Suggestions</Link>
-                    Line transition={{ duration: .75 }} initial={{ width: '0%' }} animate={{ width: pathname === '/suggestion' ? '50%' : '0%' }} />
+                <li>
+                    <Link to="/">1. About Us</Link>
+                    <Line
+                        transition={{ duration: 0.75 }}
+                        initial={{ width: "0%" }}
+                        animate={{ width: pathname === "/" ? "50%" : "0%" }}
+                    />
                 </li>
-                <li><Link to='/contact'>3. Contact Us</Link>
-                    Line transition={{ duration: .75 }} initial={{ width: '0%' }} animate={{ width: pathname === '/contact' ? '50%' : '0%' }} />
+                <li>
+                    <Link to="/suggestion">2. Our Suggestion</Link>
+                    <Line
+                        transition={{ duration: 0.75 }}
+                        initial={{ width: "0%" }}
+                        animate={{ width: pathname === "/suggestion" ? "50%" : "0%" }}
+                    />
+                </li>
+                <li>
+                    <Link to="/contact">3. Contact Us</Link>
+                    <Line
+                        transition={{ duration: 0.75 }}
+                        initial={{ width: "0%" }}
+                        animate={{ width: pathname === "/contact" ? "50%" : "0%" }}
+                    />
                 </li>
             </ul>
 

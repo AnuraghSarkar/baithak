@@ -6,39 +6,42 @@ import styled from 'styled-components';
 import { Hidden } from '../styles';
 
 const ContactUs = () => {
-    return (
-        <ContactStyle exit="exit" variants={PageAnimation} initial='hidden' animate='show' style={{ background: "#ffffff" }}>
-            <Title>
-                <Hidden>
-                    <motion.h2 variants={titleAnimation}>Get in touch.</motion.h2>
-                </Hidden>
-            </Title>
-            <div>
-                <Hidden>
-                    <Social variants={titleAnimation}>
-                        <Circle>
-                            <h2>Send message for otakus</h2>
-                        </Circle>
-                    </Social>
-                </Hidden>
-                <Hidden>
-                    <Social variants={titleAnimation}>
-                        <Circle>
-                            <h2>Contact Senpai</h2>
-                        </Circle>
-                    </Social>
-                </Hidden>
-                <Hidden>
-                    <Social variants={titleAnimation}>
-                        <Circle>
-                            <h2>Social Accounts</h2>
-                        </Circle>
-                    </Social>
-                </Hidden>
-            </div>
-        </ContactStyle>
-    );
-};
+            return (
+                <ContactStyle
+                    exit="exit"
+                    variants={PageAnimation}
+                    initial="hidden"
+                    animate="show"
+                    style={{ background: "#fff" }}
+                >
+                    <Title>
+                        <Hidden>
+                            <motion.h2 variants={titleAnimation}>Get in touch.</motion.h2>
+                        </Hidden>
+                    </Title>
+                    <div>
+                        <Hidden>
+                            <Social variants={titleAnimation}>
+                                <Circle />
+                                <h2>Send Us A Message</h2>
+                            </Social>
+                        </Hidden>
+                        <Hidden>
+                            <Social variants={titleAnimation}>
+                                <Circle />
+                                <h2>Send an email.</h2>
+                            </Social>
+                        </Hidden>
+                        <Hidden>
+                            <Social variants={titleAnimation}>
+                                <Circle />
+                                <h2>Social Media</h2>
+                            </Social>
+                        </Hidden>
+                    </div>
+                </ContactStyle>
+            );
+        };
 
 const ContactStyle = styled(motion.div)`
     padding: 5rem 10rem;

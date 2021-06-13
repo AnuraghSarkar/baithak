@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { PageAnimation, fade, photAnim, lineAnimation, slider, sliderContainer, scrollReveal } from '../animation';
 import { Hidden } from '../styles'
 import { UseScroll } from '../components/useScroll'
-import { ScrollTop } from '../components/ScrollTop'
+import ScrollTop from '../components/ScrollTop';
 
 
 const OurSuggestion = () => {
