@@ -10,7 +10,7 @@ const Nav = () => {
         <Navbar>
             <h1>
                 <Link id="logo" to="/">
-                    Animeficator
+                    Baithak
                 </Link>
             </h1>
             <ul>
@@ -23,7 +23,7 @@ const Nav = () => {
                     />
                 </li>
                 <li>
-                    <Link to="/suggestion">2. Our Suggestion</Link>
+                    <Link to="/suggestion">2. Our Services</Link>
                     <Line
                         transition={{ duration: 0.75 }}
                         initial={{ width: "0%" }}

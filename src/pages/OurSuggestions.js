@@ -24,7 +24,7 @@ const OurSuggestion = () => {
                 <Frame4 variants={slider}></Frame4>
             </motion.div>
             <Anime>
-                <motion.h2 variants={fade}>Jujustu Kaisen</motion.h2>
+                <motion.h2 variants={fade}>Free to Use</motion.h2>
                 <motion.div className="line" variants={lineAnimation} ></motion.div>
                 <Link to='/suggestion/jujutsu-kaisen'>
                     <Hidden>
@@ -33,14 +33,14 @@ const OurSuggestion = () => {
                 </Link>
             </Anime>
             <Anime variants={scrollReveal} ref={element} animate={controls} initial='hidden'>
-                <motion.h2>Demon Slayer</motion.h2>
+                <motion.h2>Domestic Platform</motion.h2>
                 <motion.div className="line" variants={lineAnimation}></motion.div>
                 <Link to='/suggestion/demon-slayer'>
                     <img src={anime4} alt="Anime Name" />
                 </Link>
             </Anime>
             <Anime variants={scrollReveal} ref={element2} animate={controls2} initial='hidden'>
-                <motion.h2>One Piece</motion.h2>
+                <motion.h2>Accessible</motion.h2>
                 <motion.div className="line"></motion.div>
                 <Link to='/suggestion/one-piece'>
                     <img src={anime8} alt="Anime Name" />
