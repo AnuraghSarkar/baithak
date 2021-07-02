@@ -1,5 +1,4 @@
 import React from "react";
-import anime6 from "../img/anime6.jpg";
 import { About, Description, Image, Hidden } from "../styles";
 import video from "../img/video.jpg";
 // Framer Motion

@@ -7,6 +7,8 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "framer-motion": "^4.1.17",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-intersection-observer": "^8.32.0",
@@ -19,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:css": "postcss src/assets/styles/tailwind.css -o src/assests/styles/index.css",
+    "build:watch": "postcss src/assets/styles/tailwind.css -o src/assests/styles/index.css --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.6",
+    "style-loader": "^3.0.0"
   }
 }
