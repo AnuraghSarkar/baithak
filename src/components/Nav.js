@@ -7,40 +7,47 @@ import { useLocation } from 'react-router';
 const Nav = () => {
     const { pathname } = useLocation();
     return (
-        <Navbar>
-            <h1>
-                <Link id="logo" to="/">
-                    Baithak
-                </Link>
-            </h1>
-            <ul>
-                <li>
-                    <Link to="/">1. About Us</Link>
-                    <Line
-                        transition={{ duration: 0.75 }}
-                        initial={{ width: "0%" }}
-                        animate={{ width: pathname === "/" ? "50%" : "0%" }}
-                    />
-                </li>
-                <li>
-                    <Link to="/suggestion">2. Our Services</Link>
-                    <Line
-                        transition={{ duration: 0.75 }}
-                        initial={{ width: "0%" }}
-                        animate={{ width: pathname === "/suggestion" ? "50%" : "0%" }}
-                    />
-                </li>
-                <li>
-                    <Link to="/contact">3. Contact Us</Link>
-                    <Line
-                        transition={{ duration: 0.75 }}
-                        initial={{ width: "0%" }}
-                        animate={{ width: pathname === "/contact" ? "50%" : "0%" }}
-                    />
-                </li>
-            </ul>
-
-        </Navbar>
+      <Navbar>
+        <h1>
+          <Link id="logo" to="/">
+            Baithak
+          </Link>
+        </h1>
+        <ul>
+          <li>
+            <Link to="/">1. About Us</Link>
+            <Line
+              transition={{ duration: 0.75 }}
+              initial={{ width: "0%" }}
+              animate={{ width: pathname === "/" ? "50%" : "0%" }}
+            />
+          </li>
+          <li>
+            <Link to="/suggestion">2. Our Services</Link>
+            <Line
+              transition={{ duration: 0.75 }}
+              initial={{ width: "0%" }}
+              animate={{ width: pathname === "/suggestion" ? "50%" : "0%" }}
+            />
+          </li>
+          <li>
+            <Link to="/joinus">3. Join Us</Link>
+            <Line
+              transition={{ duration: 0.75 }}
+              initial={{ width: "0%" }}
+              animate={{ width: pathname === "/joinus" ? "50%" : "0%" }}
+            />
+          </li>
+          <li>
+            <Link to="/contact">4. Contact Us</Link>
+            <Line
+              transition={{ duration: 0.75 }}
+              initial={{ width: "0%" }}
+              animate={{ width: pathname === "/contact" ? "50%" : "0%" }}
+            />
+          </li>
+        </ul>
+      </Navbar>
     );
 }
 const Navbar = styled.nav`
