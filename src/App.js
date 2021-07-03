@@ -1,14 +1,14 @@
 // Import Pages
-import GlobalStyle from './components/GlobalStyle';
-import AboutUs from './pages/AboutUs'
-import Nav from './components/Nav'
-import ContactUs from './pages/ContactUs'
-import OurSuggestion from './pages/OurSuggestions'
-import AnimeDetail from './pages/AnimeDetails'
+import GlobalStyle from "./components/GlobalStyle";
+import AboutUs from "./pages/AboutUs";
+import Nav from "./components/Nav";
+import ContactUs from "./pages/ContactUs";
+import OurSuggestion from "./pages/OurSuggestions";
+import AnimeDetail from "./pages/AnimeDetails";
 // Animation
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence } from "framer-motion";
 // Router
-import { Switch, Route, useLocation } from 'react-router-dom'
+import { Switch, Route, useLocation } from "react-router-dom";
 
 function App() {
   const location = useLocation();
@@ -27,7 +27,7 @@ function App() {
           <Route path="/suggestion/:id">
             <AnimeDetail />
           </Route>
-          <Route path='/contact'>
+          <Route path="/contact">
             <ContactUs />
           </Route>
         </Switch>
