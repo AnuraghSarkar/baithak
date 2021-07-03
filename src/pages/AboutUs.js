@@ -3,7 +3,8 @@ import React from 'react';
 import AboutSection from '../components/AboutSection'
 import AnimeListSection from '../components/AnimeListSection'
 import FaqSection from '../components/FaqSection'
-import  ScrollTop  from '../components/ScrollTop'
+import ScrollTop from '../components/ScrollTop'
+import Pricing from '../pages/Pricing'
 
 
 // Animation
@@ -14,6 +15,7 @@ const AboutUs = () => {
         <motion.div exit="exit" variants={PageAnimation} initial='hidden' animate='show'>
             <AboutSection />
             <AnimeListSection />
+            <Pricing />
             <FaqSection />
             <ScrollTop />
         </motion.div>
