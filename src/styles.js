@@ -41,3 +41,46 @@ export const Image = styled.div`
 export const Hidden = styled.div`
     overflow: hidden;
 `
+
+export const PriceTab = styled(motion.div)`
+  min-height: 40rem;
+  width: 20rem;
+  text-align: center;
+  background-color: #091013;
+  /* padding: 5rem 10rem; */
+  border-radius: 0.1rem;
+`;
+export const Title = styled(motion.div)`
+  color: white;
+  padding-top: 5rem;
+`;
+export const Price = styled(motion.div)`
+  color: #44c98f;
+`;
+export const Info = styled(motion.div)`
+  color: white;
+`;
+export const PriceTabPremium = styled(motion.div)`
+  min-height: 50rem;
+  width: 25rem;
+  text-align: center;
+  background-color: #fff;
+  padding: 4.5rem 2rem;
+  border-radius: 0.1rem;
+  background: linear-gradient(
+    180deg,
+    #ffffff 41.31%,
+    rgba(255, 255, 255, 0) 100%
+  );
+`;
+export const Recommended = styled(motion.div)`
+  min-height: 5rem;
+`;
+export const TitlePremium = styled(motion.div)`
+  color: black;
+  padding-top: 20px;
+`;
+
+export const InfoPremium = styled(motion.div)`
+  color: black;
+`;

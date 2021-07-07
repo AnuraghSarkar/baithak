@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from "styled-components"
 import { Link } from 'react-router-dom'
-import anime3 from '../img/anime3.jpg'
-import anime4 from '../img/anime4.jpg'
-import anime8 from '../img/anime8.jpg'
+import learn from '../img/learn.jpg'
+import domestic from '../img/domestic.jpg'
+import quiet from '../img/quiet.jpg'
 // Animation
 import { motion } from 'framer-motion';
 import { PageAnimation, fade, photAnim, lineAnimation, slider, sliderContainer, scrollReveal } from '../animation';
@@ -28,7 +28,7 @@ const OurSuggestion = () => {
                 <motion.div className="line" variants={lineAnimation} ></motion.div>
                 <Link to='/suggestion/jujutsu-kaisen'>
                     <Hidden>
-                        <motion.img variants={photAnim} src={anime3} alt="Anime Name" />
+                        <motion.img variants={photAnim} src={learn} alt="Anime Name" />
                     </Hidden>
                 </Link>
             </Anime>
@@ -36,14 +36,14 @@ const OurSuggestion = () => {
                 <motion.h2>Domestic Platform</motion.h2>
                 <motion.div className="line" variants={lineAnimation}></motion.div>
                 <Link to='/suggestion/demon-slayer'>
-                    <img src={anime4} alt="Anime Name" />
+                    <img src={domestic} alt="Anime Name" />
                 </Link>
             </Anime>
             <Anime variants={scrollReveal} ref={element2} animate={controls2} initial='hidden'>
                 <motion.h2>Accessible</motion.h2>
                 <motion.div className="line"></motion.div>
                 <Link to='/suggestion/one-piece'>
-                    <img src={anime8} alt="Anime Name" />
+                    <img src={quiet} alt="Anime Name" />
                 </Link>
             </Anime>
             <ScrollTop />

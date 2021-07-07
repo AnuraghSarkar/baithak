@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 // Import Icons 503w 704h 50 50
-import free from "../img/anime1.svg";
-import domestic from "../img/anime2.svg";
-import easy from "../img/anime3.svg";
-import quality from "../img/anime4.svg";
+import free from "../img/free.svg";
+import domestic from "../img/domestic.svg";
+import easy from "../img/easy.svg";
+import quality from "../img/quality.svg";
 // import anime2 from '../img/anime2.jpg'
-import anime7 from "../img/anime7.jpg";
+import quiet from "../img/quiet.jpg";
 import { About, Description, Image } from "../styles";
 import { UseScroll } from "./useScroll";
 import { scrollReveal } from "../animation";
@@ -57,7 +57,7 @@ const AnimeListSection = () => {
 
       </Description>
       <Image>
-        <img src={anime7} alt="Anime" />
+        <img src={quiet} alt="Anime" />
       </Image>
     </Services>
   );

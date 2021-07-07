@@ -5,6 +5,8 @@ import { MdClose } from "react-icons/md";
 import kids from "../img/kids.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
+import kids from '../img/kids.jpg'
+
 const ModalWrapper = styled.div`
   width: 1200px;
   height: 600px;
@@ -115,6 +117,11 @@ const Social = styled.div`
 `;
 
 export const Modal = ({ showModal, setShowModal }) => {
+    position: relative;
+`
+
+export const Modal = ({ showModal, setShowModal }) => {
+
   const animation = useSpring({
     config: {
       duration: 250,
@@ -122,7 +129,6 @@ export const Modal = ({ showModal, setShowModal }) => {
     opacity: showModal ? 1 : 0,
     transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
   });
-
   const keyPress = useCallback(
     (e) => {
       if (e.key === "Escape" && showModal) {
@@ -156,6 +162,8 @@ export const Modal = ({ showModal, setShowModal }) => {
                     <FontAwesomeIcon icon={faGoogle} className="social" />
                   </a>
                 </Social>
+
+                <button>Join Now</button>
               </ModalContent>
               <CloseModalButton
                 aria-label="Close modal"
