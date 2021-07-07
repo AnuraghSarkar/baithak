@@ -2,8 +2,10 @@ import React, { useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
+import kids from "../img/kids.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import kids from '../img/kids.jpg'
-
 
 const ModalWrapper = styled.div`
   width: 1200px;
@@ -64,6 +66,57 @@ const CloseModalButton = styled(MdClose)`
   z-index: 10;
 `;
 const Container = styled.div`
+  position: relative;
+`;
+
+const Social = styled.div`
+  display: flex;
+  a {
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    text-decoration: none;
+    color: #23d997;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
+    margin: 0 30px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: -90px;
+      left: 0;
+      background: #000;
+      background: linear-gradient(-45deg, #ed1c94, #ffec17);
+      position: absolute;
+      transition: 0.5s;
+    }
+
+    &:hover::after {
+      top: 0;
+    }
+    &:hover .social {
+      color: #fff;
+    }
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+  .social {
+    position: relative;
+    font-size: 45px;
+    line-height: 80px;
+    z-index: 10;
+    transition: color 0.5s;
+    top: 17px;
+  }
+`;
+
+export const Modal = ({ showModal, setShowModal }) => {
     position: relative;
 `
 
@@ -76,8 +129,6 @@ export const Modal = ({ showModal, setShowModal }) => {
     opacity: showModal ? 1 : 0,
     transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
   });
-
-
   const keyPress = useCallback(
     (e) => {
       if (e.key === "Escape" && showModal) {
@@ -102,6 +153,16 @@ export const Modal = ({ showModal, setShowModal }) => {
               <ModalContent>
                 <h1>Are you ready to join us?</h1>
                 <p>Login with your social account.</p>
+                {/* <button>Join Now</button> */}
+                <Social>
+                  <a href>
+                    <FontAwesomeIcon icon={faFacebook} className="social" />
+                  </a>
+                  <a href>
+                    <FontAwesomeIcon icon={faGoogle} className="social" />
+                  </a>
+                </Social>
+
                 <button>Join Now</button>
               </ModalContent>
               <CloseModalButton
