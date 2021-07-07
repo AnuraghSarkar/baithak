@@ -155,8 +155,6 @@ export const Modal = ({ showModal, setShowModal }) => {
                     <FontAwesomeIcon icon={faGoogle} className="social" />
                   </a>
                 </Social>
-
-                <button>Join Now</button>
               </ModalContent>
               <CloseModalButton
                 aria-label="Close modal"
