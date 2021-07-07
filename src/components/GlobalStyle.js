@@ -32,7 +32,7 @@ button{
         background-color: #23d997;
         color: white;
     }
-}
+
     h2{
         font-weight: lighter;
         font-size: 4rem;

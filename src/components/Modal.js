@@ -5,7 +5,6 @@ import { MdClose } from "react-icons/md";
 import kids from "../img/kids.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import kids from '../img/kids.jpg'
 
 const ModalWrapper = styled.div`
   width: 1200px;
@@ -117,11 +116,6 @@ const Social = styled.div`
 `;
 
 export const Modal = ({ showModal, setShowModal }) => {
-    position: relative;
-`
-
-export const Modal = ({ showModal, setShowModal }) => {
-
   const animation = useSpring({
     config: {
       duration: 250,
@@ -153,7 +147,6 @@ export const Modal = ({ showModal, setShowModal }) => {
               <ModalContent>
                 <h1>Are you ready to join us?</h1>
                 <p>Login with your social account.</p>
-                {/* <button>Join Now</button> */}
                 <Social>
                   <a href>
                     <FontAwesomeIcon icon={faFacebook} className="social" />
