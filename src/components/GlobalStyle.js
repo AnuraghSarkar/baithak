@@ -58,6 +58,82 @@ const GlobalStyle = createGlobalStyle`
             font-size: 1.4rem;
             line-height: 150%;
         }
+        .recommend{
+    /* position: absolute; */
+    width: 72px;
+    height: 12px;
+    font-size: 0.625rem; 
+    transform: rotate(-45.56deg);
+    font-style: italic;
+    font-weight: bold;
+    line-height: 0.75rem; 
+    margin-top: -3rem;
+    margin-left: -3rem;
+    padding: 0.1rem ;
+    background-color: #44C97F;
+}
+.recommend{
+    /* position: absolute; */
+    width: 72px;
+    height: 12px;
+    font-size: 0.625rem; 
+    transform: rotate(-45.56deg);
+    font-style: italic;
+    font-weight: bold;
+    line-height: 0.75rem; 
+    margin-top: -3rem;
+    margin-left: -3rem;
+    padding: 0.1rem ;
+    background-color: #44C97F;
+}
+.title{
+    font-size: 2rem;
+}
+.premiumtitle{
+    margin-top: -3.9rem;
+    font-size: 2rem;
+
+}
+
+.price{
+    font-size:1.9rem;
+}
+.price-premium{
+    font-size:1.9rem;
+    margin-top:-0.6rem;
+}
+
+.cent{
+    padding: 0.1rem;
+    font-size: 1.2rem;
+}
+.time{
+    margin-top: -1rem;
+    font-size: 1.4rem ;
+}
+.info-premium{
+    margin-top:0rem;
+}
+.lists{
+    font-size: 1rem ;
+}
+
+.bold{
+    font-weight: bold;
+}
+.startup{
+    margin-top: 10rem;
+}
+.growth{
+    margin-top: 8.6rem;
+}
+.premium{
+    margin-top: 4.4rem;
+    background-color: #FFFFFF;
+}
+.enterprise{
+    margin-top: 4.5rem;
+}
 `;
 
 export default GlobalStyle;

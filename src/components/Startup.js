@@ -1,5 +1,5 @@
 import React from "react";
-import { PriceTab, Title,Price, Info } from "../styles";
+import { PriceTab, Title, Price, Info, Button, UL, LI } from "./stylesPricing";
 
 const Startup = () => {
     return(
@@ -9,18 +9,18 @@ const Startup = () => {
                 <h1 class="price"><sup class="dollar">$</sup>0.<span class="cent">00</span></h1>
                     <h2 class="time">Yearly</h2>
             </Price>
-            <Info><ul class="info">
-                <li class = "lists">
+            <Info><UL class="info">
+                <LI class = "lists">
                 <span class="bold">5</span>Users
-                </li>
-                <li class = "lists">
+                </LI>
+                <LI class = "lists">
                  <span class="bold">1</span>Projects
-                </li>
-                <li class = "lists">
+                </LI>
+                <LI class = "lists">
                  <span class="bold">16 GB</span>Bandwidth
-                </li>
-                </ul>
-                <button class="startup" onClick="">Start Now</button>    
+                </LI>
+                </UL>
+                <Button class="startup" onClick="">Start Now</Button>    
             </Info>     
         </PriceTab>
     )
