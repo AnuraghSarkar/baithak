@@ -13,6 +13,7 @@ const AboutSection = () => {
   const openModal = () => {
     setShowModal((prev) => !prev);
   };
+
   return (
     <About>
       <Description>
