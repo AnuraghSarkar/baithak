@@ -58,20 +58,7 @@ const GlobalStyle = createGlobalStyle`
             font-size: 1.4rem;
             line-height: 150%;
         }
-        .recommend{
-    /* position: absolute; */
-    width: 72px;
-    height: 12px;
-    font-size: 0.625rem; 
-    transform: rotate(-45.56deg);
-    font-style: italic;
-    font-weight: bold;
-    line-height: 0.75rem; 
-    margin-top: -3rem;
-    margin-left: -3rem;
-    padding: 0.1rem ;
-    background-color: #44C97F;
-}
+
 .recommend{
     /* position: absolute; */
     width: 72px;
