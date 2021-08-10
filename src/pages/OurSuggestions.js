@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from "styled-components"
-import { Link } from 'react-router-dom'
 import learn from '../img/learn.jpg'
 import domestic from '../img/domestic.jpg'
 import quiet from '../img/quiet.jpg'
@@ -26,25 +25,18 @@ const OurSuggestion = () => {
             <Anime>
                 <motion.h2 variants={fade}>Free to Use</motion.h2>
                 <motion.div className="line" variants={lineAnimation} ></motion.div>
-                <Link to='/suggestion/jujutsu-kaisen'>
                     <Hidden>
                         <motion.img variants={photAnim} src={learn} alt="Anime Name" />
                     </Hidden>
-                </Link>
             </Anime>
             <Anime variants={scrollReveal} ref={element} animate={controls} initial='hidden'>
                 <motion.h2>Domestic Platform</motion.h2>
                 <motion.div className="line" variants={lineAnimation}></motion.div>
-                <Link to='/suggestion/demon-slayer'>
                     <img src={domestic} alt="Anime Name" />
-                </Link>
             </Anime>
             <Anime variants={scrollReveal} ref={element2} animate={controls2} initial='hidden'>
                 <motion.h2>Accessible</motion.h2>
-                <motion.div className="line"></motion.div>
-                <Link to='/suggestion/one-piece'>
                     <img src={quiet} alt="Anime Name" />
-                </Link>
             </Anime>
             <ScrollTop />
         </List>

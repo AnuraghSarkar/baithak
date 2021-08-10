@@ -78,3 +78,4 @@ export const scrollReveal = {
         skew: '0deg'
     }
 };
+

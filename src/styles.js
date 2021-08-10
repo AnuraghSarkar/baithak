@@ -41,3 +41,38 @@ export const Image = styled.div`
 export const Hidden = styled.div`
   overflow: hidden;
 `;
+
+export const HeaderElement = styled(motion.div)`
+  min-height: 3.6rem;
+  width: 100%;
+  background-color: #ff8e00;
+`;
+export const HeaderText = styled(motion.div)`
+  color: #ffffff;
+  font-size: 1rem;
+  padding-top: 0.9rem;
+`;
+export const LernMoreButton = styled(motion.div)`
+  letter-spacing: 0.1rem;
+  padding-top: 0.5rem;
+`;
+//navbar
+export const NavbarElement = styled(motion.div)`
+  background-color: transparent;
+  margin-top: -45rem;
+`;
+export const JoinMeetingElement = styled(motion.div)`
+  padding-top: 2rem;
+  padding-left: 5rem;
+  width: 25rem;
+  color: #fff;
+  font-weight: bold;
+`;
+
+export const HostMeetingElement = styled(motion.div)`
+  padding-top: 2rem;
+  padding-left: 5rem;
+  width: 25rem;
+  color: white;
+  font-weight: bold;
+`;

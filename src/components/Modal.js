@@ -5,7 +5,7 @@ import { MdClose } from "react-icons/md";
 import kids from "../img/kids.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
-import { googleProvider, facebookProvider } from "../config/AuthMethod";
+import { googleProvider } from "../config/AuthMethod";
 import socialMediaAuth from "../config/Auth";
 
 const ModalWrapper = styled.div`
@@ -140,9 +140,9 @@ export const Modal = ({ showModal, setShowModal }) => {
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
 
-  const loginClick = async(provider) => {
+  const loginClick = async (provider) => {
     const res = await socialMediaAuth(provider);
-    console.log(res)
+    console.log(res);
   };
 
   return (
@@ -156,9 +156,6 @@ export const Modal = ({ showModal, setShowModal }) => {
                 <h1>Are you ready to join us?</h1>
                 <p>Login with your social account.</p>
                 <Social>
-                  <button onClick={() => loginClick(facebookProvider)}>
-                    <FontAwesomeIcon icon={faFacebook} className="social" />
-                  </button>
                   <button onClick={() => loginClick(googleProvider)}>
                     <FontAwesomeIcon icon={faGoogle} className="social" />
                   </button>
