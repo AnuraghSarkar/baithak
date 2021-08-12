@@ -3,9 +3,20 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router";
+import { useContext } from "react";
+import { UserContext } from "../store";
+import firebase from "firebase";
+
+
 
 const Nav = () => {
   const { pathname } = useLocation();
+  const currentUser = useContext(UserContext);
+  
+  const logout = () => {
+    firebase.auth().signOut();
+  }
+
   return (
     <Navbar>
       <h1>
@@ -15,7 +26,7 @@ const Nav = () => {
       </h1>
       <ul>
         <li>
-          <Link to="/">1. About Us</Link>
+          <Link to="/">{currentUser ? "Home" : " About Us"}</Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
@@ -23,7 +34,7 @@ const Nav = () => {
           />
         </li>
         <li>
-          <Link to="/suggestion">2. Our Services</Link>
+          <Link to="/suggestion">Our Services</Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
@@ -31,17 +42,23 @@ const Nav = () => {
           />
         </li>
         <li>
-          <Link to="/contact">3. Contact Us</Link>
+          <Link to="/contact">Contact Us</Link>
           <Line
             transition={{ duration: 0.75 }}
             initial={{ width: "0%" }}
             animate={{ width: pathname === "/contact" ? "50%" : "0%" }}
           />
         </li>
+        {currentUser && (
+          <li onClick={logout}>
+            <Link title={currentUser.displayName}>Logout</Link>
+          </li>
+        )}
       </ul>
     </Navbar>
   );
 };
+
 const Navbar = styled.nav`
   min-height: 10vh;
   display: flex;

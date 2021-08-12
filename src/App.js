@@ -4,7 +4,6 @@ import AboutUs from "./pages/AboutUs";
 import Nav from "./components/Nav";
 import ContactUs from "./pages/ContactUs";
 import OurSuggestion from "./pages/OurSuggestions";
-import Join from './pages/Join'
 // Animation
 import { AnimatePresence } from "framer-motion";
 // Router
@@ -26,10 +25,6 @@ function App() {
           <Route path="/suggestion" exact>
             <OurSuggestion />
           </Route>
-          <Route path="/join" exact>
-            <Join />
-          </Route>
-
           <Route path="/contact">
             <ContactUs />
           </Route>

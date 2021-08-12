@@ -35,23 +35,23 @@ const Hero = ()=> {
             wrapper="b"
             steps={[
               "CLOSE A DEAL",
-              2000,
+              3000,
               "DELIGHT A CUSTOMER",
-              2000,
+              3000,
               "LEAP TALL BUILDINGS ",
-              2000,
+              3000,
               "LAUNCH A PRODUCT",
-              2000,
+              3000,
               "TRAIN A TEAM",
-              2000,
+              3000,
               "SHOW WORK WHO’S BOSS",
-              2000,
+              3000,
               "DESIGN A SNEAKER",
-              2000,
+              3000,
               "MAKE A DIFFERENCE",
-              2000,
+              3000,
               "GET #*%! DONE",
-              2000,
+              3000,
             ]}
           />
         </TypicalTitle>
