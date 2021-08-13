@@ -7,15 +7,12 @@ import { useContext } from "react";
 import { UserContext } from "../store";
 import firebase from "firebase";
 
-
-
 const Nav = () => {
   const { pathname } = useLocation();
   const currentUser = useContext(UserContext);
-  
-  const logout = () => {
+  const logout = (e) => {
     firebase.auth().signOut();
-  }
+  };
 
   return (
     <Navbar>

@@ -18,7 +18,7 @@ const AboutUs = () => {
     <motion.div
       exit="exit"
       variants={PageAnimation}
-      initial="hidden"
+      // initial='hidden'
       animate="show"
     >
       {currentUser ? (
