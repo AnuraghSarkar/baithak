@@ -32,11 +32,11 @@ const OurSuggestion = () => {
             <Anime variants={scrollReveal} ref={element} animate={controls} initial='hidden'>
                 <motion.h2>Domestic Platform</motion.h2>
                 <motion.div className="line" variants={lineAnimation}></motion.div>
-                    <img src={domestic} alt="Anime Name" />
+                    <img src={domestic} alt="Service Name" />
             </Anime>
             <Anime variants={scrollReveal} ref={element2} animate={controls2} initial='hidden'>
                 <motion.h2>Accessible</motion.h2>
-                    <img src={quiet} alt="Anime Name" />
+                    <img src={quiet} alt="Service Name" />
             </Anime>
             <ScrollTop />
         </List>

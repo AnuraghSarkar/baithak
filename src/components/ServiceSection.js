@@ -11,7 +11,7 @@ import { About, Description, Image } from "../styles";
 import { UseScroll } from "./useScroll";
 import { scrollReveal } from "../animation";
 
-const AnimeListSection = () => {
+const ServiceSection = () => {
   const [element, controls] = UseScroll();
   return (
     <Services
@@ -96,4 +96,4 @@ const Card = styled.div`
   }
 `;
 
-export default AnimeListSection;
+export default ServiceSection;

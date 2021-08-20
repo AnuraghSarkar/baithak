@@ -2,7 +2,7 @@ import React from "react";
 // Import Page Component
 import { useContext } from "react";
 import AboutSection from "../components/AboutSection";
-import AnimeListSection from "../components/AnimeListSection";
+import ServiceSection from "../components/ServiceSection";
 import FaqSection from "../components/FaqSection";
 import ScrollTop from "../components/ScrollTop";
 
@@ -26,7 +26,7 @@ const AboutUs = () => {
       ) : (
         <>
           <AboutSection />
-          <AnimeListSection />
+          <ServiceSection />
           <FaqSection />
           <ScrollTop />
         </>
