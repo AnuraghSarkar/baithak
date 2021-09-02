@@ -1,17 +1,24 @@
 import firebase from "firebase";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAG7zmoDf5X0tdhcu-8ZgZQ2MAQGlpaR7o",
-  authDomain: "baithak-c4f45.firebaseapp.com",
-  projectId: "baithak-c4f45",
-  storageBucket: "baithak-c4f45.appspot.com",
-  messagingSenderId: "127072954085",
-  appId: "1:127072954085:web:50772b09baf71f35ca960c",
-  measurementId: "G-76QSB6W5PS",
+  apiKey: process.env.REACT_APP_FIREBASE_API,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
-// Initializing Firebase
+//initialize a Firebase instance
 firebase.initializeApp(firebaseConfig);
+
+//initialize Cloud Functions through Firebase
+firebase.functions();
+
+//this is optional, in case you want you wanna use analytics
 firebase.analytics();
 
+//export `firebase` the namespace to import it in src/App.js
 export default firebase;

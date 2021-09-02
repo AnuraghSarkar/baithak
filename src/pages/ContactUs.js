@@ -1,12 +1,53 @@
 import React from "react";
 // Animation
 import { motion } from "framer-motion";
-import { PageAnimation, titleAnimation, slider, sliderContainer, fade } from "../animation";
+import {
+  PageAnimation,
+  titleAnimation,
+  slider,
+  sliderContainer,
+  fade,
+} from "../animation";
 import styled from "styled-components";
 import { Hidden } from "../styles";
-import '../assets/css/main.css'
+import "../assets/css/main.css";
+import { useState } from "react";
+import firebase from "../config/firebase-config";
 
 const ContactUs = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loader, setLoader] = useState(false);
+  const [subject, setSubject] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    firebase
+      .firestore()
+      .collection("contacts")
+      .add({
+        name: name,
+        email: email,
+        message: message,
+        subject: subject,
+      })
+      .then(() => {
+        setLoader(false);
+        alert("Your message has been submitted👍");
+      })
+      .catch((error) => {
+        alert(error.message);
+        setLoader(false);
+      });
+
+    setName("");
+    setEmail("");
+    setMessage("");
+    setSubject("");
+  };
+
   return (
     <ContactStyle
       exit="exit"
@@ -50,56 +91,67 @@ const ContactUs = () => {
           </div>
         </div>
 
-          <Contact1 variants={fade}>
-              <ContactForm>
-                <ContactTile>Drop your queries</ContactTile>
-                <WrapInput>
-                  <input
-                    className="input1"
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                  />
-                  <span className="shadow-input1"></span>
-                </WrapInput>
+        <Contact1 variants={fade}>
+          <ContactForm onSubmit={handleSubmit}>
+            <ContactTile>Drop your queries</ContactTile>
+            <WrapInput>
+              <input
+                className="input1"
+                type="text"
+                name="name"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <span className="shadow-input1"></span>
+            </WrapInput>
 
-                <WrapInput>
-                  <input
-                    className="input1"
-                    type="text"
-                    name="email"
-                    placeholder="Email"
-                  />
-                  <span className="shadow-input1"></span>
-                </WrapInput>
+            <WrapInput>
+              <input
+                className="input1"
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                
+              />
+              <span className="shadow-input1"></span>
+            </WrapInput>
 
-                <WrapInput>
-                  <input
-                    className="input1"
-                    type="text"
-                    name="subject"
-                    placeholder="Subject"
-                  />
-                  <span className="shadow-input1"></span>
-                </WrapInput>
+            <WrapInput>
+              <input
+                className="input1"
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+              />
+              <span className="shadow-input1"></span>
+            </WrapInput>
 
-                <WrapInput>
-                  <textarea
-                    className="input1"
-                    name="message"
-                    placeholder="Message"
-                  ></textarea>
-                  <span className="shadow-input1"></span>
-                </WrapInput>
+            <WrapInput>
+              <textarea
+                className="input1"
+                name="message"
+                placeholder="Message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
+              <span className="shadow-input1"></span>
+            </WrapInput>
 
-                <div className="container-contact1-form-btn">
-                  <button className="contact1-form-btn">
-                    <span>Send Email</span>
-                  </button>
-                </div>
-              </ContactForm>
-            
-          </Contact1>
+            <div className="container-contact1-form-btn">
+              <button
+                className="contact1-form-btn"
+                style={{ background: loader ? "#ccc" : "##23D997" }}
+              >
+                <span>Send Email</span>
+              </button>
+            </div>
+          </ContactForm>
+        </Contact1>
       </Content>
     </ContactStyle>
   );
@@ -185,6 +237,5 @@ const WrapInput = styled.div`
   z-index: 1;
   margin-bottom: 20px;
 `;
-
 
 export default ContactUs;

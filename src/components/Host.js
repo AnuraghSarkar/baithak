@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 import joinmeet from '../img/bg.jpg'
 
 import Typical from 'react-typical'
+import { HostModal } from './HostModal';
+import { JoinModal } from './JoinModal';
 
 import {
   HeroBackground,
@@ -24,7 +26,17 @@ import {
 } from "../styles";
 
 
-const Hero = ()=> {
+const Hero = () => {
+    const [showHostModal, setshowHostModal] = useState(false);
+
+    const openHostModal = () => {
+      setshowHostModal((prev) => !prev);
+  };
+      const [showJoinModal, setshowJoinModal] = useState(false);
+
+      const openJoinModal = () => {
+        setshowJoinModal((prev) => !prev);
+      };
     return (
       <HeroBackground>
         <HeroImage src={joinmeet} alt="ok"></HeroImage>
@@ -63,7 +75,11 @@ const Hero = ()=> {
               <HostText>
                 Want to connect to the other members? Host a meeting.
               </HostText>
-              <LogButton>Host Meeting</LogButton>
+              <LogButton onClick={openHostModal}>Host Meeting</LogButton>
+              <HostModal
+                showHostModal={showHostModal}
+                setshowHostModal={setshowHostModal}
+              />
             </HostMeetingElement>
           </HostMeeting>
 
@@ -78,7 +94,11 @@ const Hero = ()=> {
                 Did someone sent you a meeting code? Please enter it here to
                 join a meeting.
               </JoinText>
-              <JoinButton>Join Meeting</JoinButton>
+              <JoinButton onClick={openJoinModal}>Join Meeting</JoinButton>
+              <JoinModal
+                showJoinModal={showJoinModal}
+                setshowJoinModal={setshowJoinModal}
+              />
             </JoinMeetingElement>
           </JoinMeeting>
         </JoinOrHost>
@@ -86,4 +106,6 @@ const Hero = ()=> {
     );
 }
 
-export default Hero
+
+
+export default Hero;

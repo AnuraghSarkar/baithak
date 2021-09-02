@@ -12,6 +12,8 @@ const Nav = () => {
   const currentUser = useContext(UserContext);
   const logout = (e) => {
     firebase.auth().signOut();
+        window.location.reload(); 
+
   };
 
   return (

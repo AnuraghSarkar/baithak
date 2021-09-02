@@ -4,12 +4,11 @@ import AboutUs from "./pages/AboutUs";
 import Nav from "./components/Nav";
 import ContactUs from "./pages/ContactUs";
 import OurSuggestion from "./pages/OurSuggestions";
+import Jitsu from "./pages/Jitsu";
 // Animation
 import { AnimatePresence } from "framer-motion";
 // Router
 import { Switch, Route, useLocation } from "react-router-dom";
-
-
 
 function App() {
   const location = useLocation();
@@ -25,8 +24,11 @@ function App() {
           <Route path="/suggestion" exact>
             <OurSuggestion />
           </Route>
-          <Route path="/contact">
+          <Route path="/contact" exact>
             <ContactUs />
+          </Route>
+          <Route path="/jitsu" exact>
+            <Jitsu />
           </Route>
         </Switch>
       </AnimatePresence>

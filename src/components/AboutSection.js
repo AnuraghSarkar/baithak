@@ -40,7 +40,7 @@ const AboutSection = () => {
         <Modal showModal={showModal} setShowModal={setShowModal} />
       </Description>
       <Image>
-        <motion.img variants={photAnim} src={video} alt="Anime Background" />
+        <motion.img variants={photAnim} src={video} alt="Image Background" />
       </Image>
       <Wave />
     </About>

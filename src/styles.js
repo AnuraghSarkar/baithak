@@ -149,7 +149,7 @@ export const OrTitle = styled(motion.div)`
 `;
 
 export const JoinMeeting = styled(motion.div)`
-  z-index: 1;
+  z-index: 10;
   text-align: center;
   width: 30rem;
   height: 14rem;
