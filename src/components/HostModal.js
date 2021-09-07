@@ -1,9 +1,10 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useContext } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { roomStore } from "../store";
+import { UserContext } from "../store";
 
 const ModalWrapper = styled.div`
   width: 500px;
@@ -101,7 +102,8 @@ export const HostModal = ({ showHostModal, setshowHostModal }) => {
     document.addEventListener("keydown", keyPress);
     return () => document.removeEventListener("keydown", keyPress);
   }, [keyPress]);
-  const {
+  const currentUser = useContext(UserContext);
+  let {
     roomName,
     displayName,
     subject,
@@ -111,6 +113,8 @@ export const HostModal = ({ showHostModal, setshowHostModal }) => {
     setsubject,
     setdisplayName,
   } = roomStore();
+  displayName = currentUser.displayName;
+  
   return (
     <>
       {showHostModal ? (
