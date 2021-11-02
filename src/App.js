@@ -20,7 +20,7 @@ function App() {
       <GlobalStyle />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
-          <Route path="/" exact>
+          <Route path="/baithak" exact>
             <AboutUs />
           </Route>
           <Route path="/suggestion" exact>
@@ -32,7 +32,7 @@ function App() {
           <Route path="/jitsu" exact>
             <Jitsu />
           </Route>
-          <Route path='*' component={Page404}></Route>
+          <Route path="*" component={Page404}></Route>
         </Switch>
       </AnimatePresence>
     </div>
