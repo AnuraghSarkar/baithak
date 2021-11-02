@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from "react";
-import { useSpring, animated } from "react-spring";
+import {  animated } from "react-spring";
 import styled from "styled-components";
 import { MdClose } from "react-icons/md";
 import kids from "../img/kids.jpg";
@@ -119,11 +119,6 @@ const Social = styled.div`
 `;
 
 export const Modal = ({ showModal, setShowModal }) => {
-  const animation = useSpring({
-    config: {
-      duration: 250,
-    },
-  });
   const keyPress = useCallback(
     (e) => {
       if (e.key === "Escape" && showModal) {
@@ -147,7 +142,7 @@ export const Modal = ({ showModal, setShowModal }) => {
     <>
       {showModal ? (
         <Container>
-          <animated.div style={animation}>
+          <animated.div>
             <ModalWrapper showModal={showModal}>
               <ModalImg src={kids} alt="kids" />
               <ModalContent>
