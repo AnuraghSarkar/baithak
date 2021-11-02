@@ -8,8 +8,6 @@ import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { googleProvider } from "../config/AuthMethod";
 import socialMediaAuth from "../config/Auth";
 
-
-
 const ModalWrapper = styled.div`
   width: 1200px;
   height: 600px;
@@ -125,8 +123,6 @@ export const Modal = ({ showModal, setShowModal }) => {
     config: {
       duration: 250,
     },
-    opacity: showModal ? 1 : 0,
-    transform: showModal ? `translateY(0%)` : `translateY(-100%)`,
   });
   const keyPress = useCallback(
     (e) => {
@@ -146,9 +142,7 @@ export const Modal = ({ showModal, setShowModal }) => {
     const res = await socialMediaAuth(provider);
     console.log(res);
   };
-  
-  
-  
+
   return (
     <>
       {showModal ? (
