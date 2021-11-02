@@ -20,7 +20,7 @@ function App() {
       <GlobalStyle />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
-          <Route path="/baithak" exact>
+          <Route path="/" exact>
             <AboutUs />
           </Route>
           <Route path="/suggestion" exact>
